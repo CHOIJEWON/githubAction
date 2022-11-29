@@ -16,7 +16,7 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
-    runs-on: ubuntu-lastest
+    runs-on: ubuntu-latest
 
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -26,7 +26,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Clean temp directory
         run: |
-          rm -rf $GITHUB_WORKSPACE .
+          rm -rf $GITHUB_WORKSPACE . 
           cp -r $GITHUB_WORKSPACE .
 
       - name: archive drcloud
