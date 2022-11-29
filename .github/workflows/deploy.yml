@@ -44,7 +44,7 @@ jobs:
       
     - name: deploy with AWS codeDeploy
       run: aws deploy create-deployment
-        --application-name wemakers-github-action-code-deploy
+        --application-name github-action-test
         --deployment-config-name CodeDeployDefault.OneAtATime
-        --deployment-group-name wemakers-github-action-role
+        --deployment-group-name github-action-test-group
         --s3-location bucket=github-action-codedeploy-s3,bundleType=tgz,key=codeDeploy/drcloud.tar.gz
