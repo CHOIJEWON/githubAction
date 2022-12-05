@@ -27,11 +27,7 @@ jobs:
       run: mkdir drcloud-deploy
 
     - name: archive drcloud 
-      run: tar cvfz ./drcloud.tar.gz *
-      
-      # appspec.yml Copy
-    - name: Copy appspec
-      run: cp appspec.yml ./drcloud-deploy/
+      run: tar cvfz ./drcloud.zip *
 
       # 압축파일 형태로 전달
     - name: Make zip file
