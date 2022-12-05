@@ -23,15 +23,8 @@ jobs:
     - name: checkout release
       uses: actions/checkout@v3
 
-    - name: Make Directory for deliver
-      run: mkdir drcloud-deploy
-
     - name: archive drcloud 
-      run: tar cvfz ./drcloud.zip *
-
-      # 압축파일 형태로 전달
-    - name: Make zip file
-      run: zip -r -qq -j ./drcloud.zip ./drcloud-deploy
+      run: tar cvfz ./drcloud.tar.gz *
        
     - name: AWS configure credentials
       uses: aws-actions/configure-aws-credentials@v1
@@ -48,6 +41,6 @@ jobs:
         --application-name github-action-test
         --deployment-config-name CodeDeployDefault.OneAtATime
         --deployment-group-name code-deploy-test
-        --s3-location bucket=wemakers-code-deploy-instance,bundleType=zip,key=codeDeploy/drcloud.zip
+        --s3-location bucket=wemakers-code-deploy-instance,bundleType=tar,key=codeDeploy/drcloud.tar.gz
         
         
