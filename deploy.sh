@@ -3,4 +3,6 @@
 cd /home/ubuntu/drcloud-deploy
 yarn install
 yarn build
-yarn pm2 start ./dist/src/main.js
+
+cd /home/ubuntu/drcloud-deploy/dist/src
+yarn pm2 start main.js
