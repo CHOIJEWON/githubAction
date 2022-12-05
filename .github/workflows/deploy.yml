@@ -25,9 +25,22 @@ jobs:
 
     - name: Make Directory for deliver
       run: mkdir drcloud-deploy
+
+    # Jar 파일 Copy
+    - name: Copy Jar
+      run: cp ./build/libs/*.jar ./drcloud.tar.gz/
+
+      # appspec.yml Copy
+    - name: Copy appspec
+      run: cp appspec.yml ./deploy/
+
+      # 압축파일 형태로 전달
+    - name: Make zip file
+      run: zip -r -qq -j ./drcloud.tar.gz ./deploy
+
         
-    - name: archive drcloud 
-      run: tar cvfz ./drcloud.tar.gz *
+#     - name: archive drcloud 
+#       run: tar cvfz ./drcloud.tar.gz *
        
     - name: AWS configure credentials
       uses: aws-actions/configure-aws-credentials@v1
