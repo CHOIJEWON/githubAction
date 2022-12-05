@@ -1,5 +1,5 @@
-nest build
+sudo yarn install
 
-yarn install
+sudo yarn build
 
-yarn pm2 start ./dist/src/main.js
+sudo yarn pm2 start ./dist/src/main.js
