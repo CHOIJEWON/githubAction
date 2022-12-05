@@ -11,6 +11,6 @@ permissions:
 
 hooks:
   ApplicationStart:
-    - location: sudo deploy.sh # nginx와 연결되어 있지 않은 포트로 스프링 부트 시작.
+    - location: /home/ubuntu/drcloud-deploy/deploy.sh # nginx와 연결되어 있지 않은 포트로 스프링 부트 시작.
       timeout: 60
       runas: test
