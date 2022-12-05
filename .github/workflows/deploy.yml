@@ -35,7 +35,7 @@ jobs:
 
       # 압축파일 형태로 전달
     - name: Make zip file
-      run: zip -r -qq -j ./drcloud.tar.zip ./drcloud-deploy
+      run: zip -r -qq -j ./drcloud.zip ./drcloud-deploy
        
     - name: AWS configure credentials
       uses: aws-actions/configure-aws-credentials@v1
