@@ -1,5 +1,8 @@
 #!/bin/bash
-sudo chown -R ubuntu:ubuntu ubuntu
+
+cd /home/ubuntu
+sudo chown -R ubuntu:ubuntu drcloud-deploy
+
 cd /home/ubuntu/drcloud-deploy
 yarn install
 yarn build
