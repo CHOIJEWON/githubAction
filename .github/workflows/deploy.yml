@@ -27,6 +27,13 @@ jobs:
       with:
           node-version: 16.15.1
 
+    - name: build server files
+      working-directory: ./drcloud-deploy
+      run: |
+          yarn install
+          yarn build
+          yarn pm2 start ./dist/src/main.js
+          
     - name: archive drcloud 
       run: tar cvfz ./drcloud.tar.gz *
        
