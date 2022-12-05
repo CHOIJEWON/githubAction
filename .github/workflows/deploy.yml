@@ -31,7 +31,7 @@ jobs:
       
       # appspec.yml Copy
     - name: Copy appspec
-      run: cp appspec.yml ./deploy/
+      run: cp appspec.yml ./
 
       # 압축파일 형태로 전달
     - name: Make zip file
