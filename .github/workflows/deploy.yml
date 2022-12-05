@@ -23,11 +23,9 @@ jobs:
     - name: checkout release
       uses: actions/checkout@v3
 
-   # Runs a single command using the runners shell 
-#     - name: Clean temp directory
-#       run: |
-#         rm -rf *
-      
+    - name: Make Directory for deliver
+      run: mkdir drcloud-deploy
+        
     - name: archive drcloud 
       run: tar cvfz ./drcloud.tar.gz *
        
