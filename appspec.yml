@@ -7,7 +7,7 @@ permissions:
   - object: /home/ubuntu/drcloud-deploy
     owner: ubuntu
     group: ubuntu
-    mode: 644
+    mode: 700
 
     
 hooks:
