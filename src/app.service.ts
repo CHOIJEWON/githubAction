@@ -8,6 +8,6 @@ export class AppService {
   }
 
   getTime(): string {
-    return `${dayjs('2021-10-10 10:30:25', 'YYYY-MM-DD HH:mm:ss')}`;
+    return `현재 날짜는 12월 5일 입니다.`;
   }
 }
