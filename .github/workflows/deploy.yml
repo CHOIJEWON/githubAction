@@ -35,7 +35,7 @@ jobs:
 
       # 압축파일 형태로 전달
     - name: Make zip file
-      run: zip -r -qq -j ./drcloud.tar.zip ./codeDeploy
+      run: zip -r -qq -j ./drcloud.tar.zip ./drcloud-deploy
        
     - name: AWS configure credentials
       uses: aws-actions/configure-aws-credentials@v1
@@ -52,4 +52,4 @@ jobs:
         --application-name github-action-test
         --deployment-config-name CodeDeployDefault.OneAtATime
         --deployment-group-name code-deploy-test
-        --s3-location bucket=github-action-codedeploy-s3,bundleType=tgz,key=codeDeploy/drcloud.tar.gz
+        --s3-location bucket=github-action-codedeploy-s3,bundleType=tgz,key=codeDeploy/drcloud.tar.zip
