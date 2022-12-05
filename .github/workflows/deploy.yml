@@ -52,5 +52,4 @@ jobs:
         --application-name github-action-test
         --deployment-config-name CodeDeployDefault.OneAtATime
         --deployment-group-name code-deploy-test
-        --s3-location bucket=wemakers-code-deploy-instance,bundleType=zip,key=drcloud.zip \
-          --region ap-northeast-2
+        --s3-location bucket=wemakers-code-deploy-instance,bundleType=zip,key=drcloud.zip
