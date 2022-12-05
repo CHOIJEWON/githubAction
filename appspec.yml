@@ -5,8 +5,8 @@ files:
     destination: /home/ubuntu/drcloud-deploy
 permissions:
   - object: /home/ubuntu/drcloud-deploy
-    owner: wemakers.team@gmail.com
-    group: ${{ secrets.AWS_GROUP }}
+    owner: ubuntu
+    group: ubuntu
     mode: 644
 
     
