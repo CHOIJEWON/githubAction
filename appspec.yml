@@ -5,15 +5,10 @@ files:
     destination: /home/ubuntu/drcloud-deploy
 permissions:
   - object: /home/ubuntu/drcloud-deploy
-    owner: ubuntu
-    group: ubuntu
+    owner: ${{ secrets.AWS_USER }}
+    group: ${{ secrets.AWS_GROUP }}
     mode: 644
-    acls:
-      - "d:u::rwx"
-      - "d:g::rwx"
-      - "d:o::rwx"
-     type: 
-      - directory
+
     
 hooks:
   ApplicationStart:
