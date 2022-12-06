@@ -26,31 +26,26 @@ jobs:
     - uses: actions/setup-node@v3
       with:
           node-version: 16.15.1
-          
-    - name: Make envfile
-      run: |
-        echo "TEST_ENV=${{ secrets.ENV_TEST }}" >> .env
-        cat .env
        
           
-    - name: archive drcloud 
-      run: tar cvfz ./drcloud.tar.gz *
+    - name: archive wemakers
+      run: tar cvfz ./wemakers.tar.gz *
        
     - name: AWS configure credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
+        aws-access-key-id: ${{ secrets.AWS_USER_ACCESS }}
+        aws-secret-access-key: ${{ secrets.AWS_USER_SECRET }}
         aws-region: ap-northeast-2
         
     - name: upload to S3
-      run: aws s3 cp --region ap-northeast-2 ./drcloud.tar.gz s3://wemakers-code-deploy-instance/codeDeploy/
+      run: aws s3 cp --region ap-northeast-2 ./wemakers.tar.gz s3://wemakers-code-deploy-instance/codeDeploy/
       
     - name: deploy with AWS codeDeploy
       run: aws deploy create-deployment
-        --application-name github-action-test
+        --application-name wemakers-git-action
         --deployment-config-name CodeDeployDefault.OneAtATime
-        --deployment-group-name code-deploy-test
-        --s3-location bucket=wemakers-code-deploy-instance,bundleType=tar,key=codeDeploy/drcloud.tar.gz
+        --deployment-group-name wemakers-deploy
+        --s3-location bucket=wemakers-code-deploy-instance,bundleType=tar,key=codeDeploy/wemakers.tar.gz
         
         
