@@ -26,7 +26,10 @@ jobs:
     - uses: actions/setup-node@v3
       with:
           node-version: 16.15.1
-       
+          
+    - name: Generate Environment Variables File for Production
+      run: |
+          echo "REACT_APP_DOMAIN=hello" >> .env.dev
           
     - name: archive wemakers
       run: tar cvfz ./wemakers.tar.gz *
