@@ -29,8 +29,11 @@ jobs:
           
     - name: Generate Environment Variables File for Production
       run: |
-          echo "REACT_APP_DOMAIN=hello" >> .env.dev
-          
+        echo "TEST_ENV_ONE=${{ secrets.TEST_ONE }}" >> .env.dev
+        echo "TEST_ENV_TWO=${{ secrets.TEST_TWO }}" >> .env.dev
+          env:
+              TEST_ENV_ONE: ${{ secrets.TEST_ONE }}
+              TEST_ENV_TWO: ${{ secrets.TEST_TWO }} 
     - name: archive wemakers
       run: tar cvfz ./wemakers.tar.gz *
        
