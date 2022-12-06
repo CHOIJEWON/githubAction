@@ -28,12 +28,16 @@ jobs:
           node-version: 16.15.1
           
     - name: Generate Environment Variables File for Production
+      env:
+        TEST_ENV_ONE: ${{ secrets.TEST_ONE }}
+        TEST_ENV_TWO: ${{ secrets.TEST_TWO }} 
       run: |
-        echo "TEST_ENV_ONE=${{ secrets.TEST_ONE }}" >> .env.dev
-        echo "TEST_ENV_TWO=${{ secrets.TEST_TWO }}" >> .env.dev
-          env:
-              TEST_ENV_ONE: ${{ secrets.TEST_ONE }}
-              TEST_ENV_TWO: ${{ secrets.TEST_TWO }} 
+        echo TEST_ENV_ONE="${{ secrets.TEST_ONE }}" >> .env.dev
+        echo TEST_ENV_TWO="${{ secrets.TEST_TWO }}" >> .env.dev
+        cat .env.dev
+          
+              
+          
     - name: archive wemakers
       run: tar cvfz ./wemakers.tar.gz *
        
