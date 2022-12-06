@@ -17,6 +17,8 @@ jobs:
   # This workflow contains a single job called "build" 
   build:
     runs-on: ubuntu-latest
+    env:
+      TEST2: ${{ secrets.ENV_TEST }}
     
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
