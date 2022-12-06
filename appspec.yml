@@ -2,9 +2,9 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ubuntu/drcloud-deploy
+    destination: /home/ubuntu/wemakers
 permissions:
-  - object: /home/ubuntu/drcloud-deploy
+  - object: /home/ubuntu/wemakers
     owner: ubuntu
     group: ubuntu
     mode: 700
