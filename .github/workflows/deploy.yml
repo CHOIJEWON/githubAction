@@ -31,6 +31,9 @@ jobs:
       uses: SpicyPizza/create-envfile@v1.3
       with:
         ENV_TEST : ${{ secrets.ENV_TEST }}
+        directory: drcloud-deploy
+        file_name: .env
+        fail_on_empty: true
        
           
     - name: archive drcloud 
