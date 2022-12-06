@@ -26,10 +26,12 @@ jobs:
     - uses: actions/setup-node@v3
       with:
           node-version: 16.15.1
-
-    - name: 'Create env file'
-      run: |
-          echo "${{ secrets.ENV_TEST }}" .env      
+          
+    - name: Make envfile
+      uses: SpicyPizza/create-envfile@v1.3
+      with:
+        ENV_TEST : ${{ secrets.ENV_TEST }}
+       
           
     - name: archive drcloud 
       run: tar cvfz ./drcloud.tar.gz *
