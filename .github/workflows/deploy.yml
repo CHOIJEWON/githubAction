@@ -30,6 +30,7 @@ jobs:
     - name: Make envfile
       run: |
         echo "TEST_ENV=${{ secrets.ENV_TEST }}" >> .env
+        cat .env
        
           
     - name: archive drcloud 
